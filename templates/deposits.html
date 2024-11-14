@@ -1,0 +1,35 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    <title>Sacco Customers</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Deposits</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Created Date</th>
+                <th>Customer ID</th>
+            </tr>
+            
+            {% for deposit in deposits  %}
+            	<tr>
+                    <td>{{deposit.id}}</td>
+                    <td>{{deposit.amount}}</td>
+                    <td>{{deposit.status}}</td>
+                    <td>{{deposit.created_at}}</td>
+                    <td>{{deposit.customer_id}}</td>
+                </tr>
+            {% empty %}
+            	<p>No Deposits in the Sacco</p>
+            {% endfor %}
+            
+           
+
+        </table>
+    </div>
+{% endblock %}
