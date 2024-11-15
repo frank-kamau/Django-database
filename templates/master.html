@@ -24,10 +24,15 @@
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Customers</a>
+                    <a class="nav-link" href="{% url 'customers' %}">Customers</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="">Deposits</a>
+                    <a class="nav-link" href="{% url 'add_customer' %}">Add Customer</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'deposits' %}">Deposits</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Statistics</a>
