@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Insertion and Retrieval">
-      <change afterPath="$PROJECT_DIR$/sacco/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sacco/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sacco/management/commands/populate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/deposits.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/master.html" afterDir="false" />
+    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Added Customer forms">
+      <change afterPath="$PROJECT_DIR$/templates/details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_database/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_database/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sacco/app_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/app_forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sacco/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customers.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +58,7 @@
     "Django Server.project_database.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Must/PycharmProjects/project_database/sacco/management/commands",
@@ -126,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731393818440</updated>
-      <workItem from="1731393833997" duration="26195000" />
+      <workItem from="1731393833997" duration="43981000" />
     </task>
     <task id="LOCAL-00001" summary="Insertion and Retrieval">
       <option name="closed" value="true" />
@@ -136,7 +134,39 @@
       <option name="project" value="LOCAL" />
       <updated>1731580526753</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Django display DB, Delete">
+      <option name="closed" value="true" />
+      <created>1731604808806</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731604808808</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Django display DB, Delete">
+      <option name="closed" value="true" />
+      <created>1731604867386</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731604867386</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Django display DB, Delete">
+      <option name="closed" value="true" />
+      <created>1731604909947</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731604909947</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Customer forms">
+      <option name="closed" value="true" />
+      <created>1731655525176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731655525176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +185,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Insertion and Retrieval" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insertion and Retrieval" />
+    <MESSAGE value="Django display DB, Delete" />
+    <MESSAGE value="Added Customer forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Customer forms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

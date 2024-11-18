@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -31,8 +32,14 @@ def test(request):
 
 
 def customers(request):
-    data = Customer.objects.all().order_by('-id').values() # ORM select * from customers / when you want to fetch data
-    return render(request, "customers.html", {"customers": data})
+    data = Customer.objects.all().order_by('id').values() # ORM select * from customers / when you want to fetch data
+    paginator = Paginator(data, 10)
+    page_number = request.GET.get('page', 1)
+    try:
+        paginated_data = paginator.page(page_number)
+    except PageNotAnInteger | EmptyPage:
+        paginated_data = paginator.page(1)
+    return render(request, "customers.html", {"data": paginated_data})
 
 
 def delete_customer(request, customer_id):
@@ -59,3 +66,9 @@ def add_customer(request):
 # packages for making the forms appear nicely
 # pip install django-crispy-forms
 # pip install crispy-bootstrap5
+
+
+def customer_details(request, customer_id):
+    customer = Customer.objects.get(id=customer_id)
+    deposits = Deposit.objects.filter(customer_id=customer_id)
+    return render(request, "details.html", {"deposits": deposits, "customer": customer})
