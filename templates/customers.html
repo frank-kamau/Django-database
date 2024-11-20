@@ -15,6 +15,7 @@
                 <th>Email</th>
                 <th>Joining Date</th>
                 <th>Delete</th>
+                <th>Update</th>
                 <th>Details</th>
             </tr>
             
@@ -28,6 +29,12 @@
                     {% if perms.sacco.delete_customer %}
                     	 <td>
                             <a class ="btn btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a>
+                         </td>
+                    {% endif %} 
+                
+                    {% if perms.sacco.change_customer %}
+                    	 <td>
+                            <a class ="btn btn-success btn-sm" href="{% url 'update_customer' customer.id %}">Update</a>
                          </td>
                     {% endif %} 
                    
