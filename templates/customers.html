@@ -25,12 +25,18 @@
                     <td>{{ customer.last_name }}</td>
                     <td>{{ customer.email }}</td>
                     <td>{{ customer.created_at }}</td>
-                    <td>
-                        <a class ="btn btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a>
-                    </td>
-                    <td>
-                        <a class ="btn btn-primary btn-sa" href="{% url 'customer_details' customer.id %}">Details</a>
-                    </td>
+                    {% if perms.sacco.delete_customer %}
+                    	 <td>
+                            <a class ="btn btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a>
+                         </td>
+                    {% endif %} 
+                   
+                    {% if perms.sacco.view_customer %}
+                         <td>
+                            <a class ="btn btn-primary btn-sa" href="{% url 'customer_details' customer.id %}">Details</a>
+                         </td>
+                    {% endif %}
+                
                 </tr>
             {% empty %}
             	<p>No customers in the sacco.</p>

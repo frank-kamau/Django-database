@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Django Admin">
-      <change afterPath="$PROJECT_DIR$/sacco/static/profile.png" afterDir="false" />
+    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Login form &amp; permissions">
+      <change afterPath="$PROJECT_DIR$/templates/403.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_database/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_database/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sacco/app_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/app_forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/master.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731393818440</updated>
-      <workItem from="1731393833997" duration="50455000" />
+      <workItem from="1731393833997" duration="70236000" />
     </task>
     <task id="LOCAL-00001" summary="Insertion and Retrieval">
       <option name="closed" value="true" />
@@ -180,7 +183,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731913437250</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pagination &amp; details btn">
+      <option name="closed" value="true" />
+      <created>1731915374191</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731915374191</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Login form &amp; permissions">
+      <option name="closed" value="true" />
+      <created>1732079699561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732079699562</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,9 +220,10 @@
     <MESSAGE value="Insertion and Retrieval" />
     <MESSAGE value="Django display DB, Delete" />
     <MESSAGE value="Added Customer forms" />
-    <MESSAGE value="Pagination &amp; details btn" />
     <MESSAGE value="Django Admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Django Admin" />
+    <MESSAGE value="Pagination &amp; details btn" />
+    <MESSAGE value="Login form &amp; permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login form &amp; permissions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
