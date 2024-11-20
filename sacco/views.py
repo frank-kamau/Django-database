@@ -1,8 +1,11 @@
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from pyexpat.errors import messages
 
-from sacco.app_forms import CustomerForm
+from sacco.app_forms import CustomerForm, LoginForm
 from sacco.models import Customer, Deposit
 
 
@@ -31,6 +34,7 @@ def test(request):
     return HttpResponse(f"Ok, Done, we have {customer_count} customers and {deposit_count} deposits")
 
 
+@login_required
 def customers(request):
     data = Customer.objects.all().order_by('id').values() # ORM select * from customers / when you want to fetch data
     paginator = Paginator(data, 10)
@@ -41,18 +45,20 @@ def customers(request):
         paginated_data = paginator.page(1)
     return render(request, "customers.html", {"data": paginated_data})
 
-
+@login_required
+@permission_required("sacco.delete_customer", raise_exception=True)
 def delete_customer(request, customer_id):
     customer = Customer.objects.get(id=customer_id) #select * from customers where id=7
     customer.delete() #delete from customers where id=7
     return redirect('customers')
 
-
+@login_required
 def deposits(request):
     data = Deposit.objects.all()
     return render(request, "deposits.html", {"deposits": data})
 
-
+@login_required
+@permission_required("sacco.add_customer", raise_exception=True)
 def add_customer(request):
     if request.method == "POST":
         form = CustomerForm(request.POST)
@@ -67,8 +73,31 @@ def add_customer(request):
 # pip install django-crispy-forms
 # pip install crispy-bootstrap5
 
-
+@login_required
+@permission_required("sacco.view_customer", raise_exception=True)
 def customer_details(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     deposits = Deposit.objects.filter(customer_id=customer_id)
     return render(request, "details.html", {"deposits": deposits, "customer": customer})
+
+
+def login_user(request):
+    if request.method == "GET":
+        form = LoginForm()
+        return render(request, "login_form.html", {"form": form})
+    elif request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data ['username']
+            password = form.cleaned_data ['password']
+            user  = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user) #sessions #cookies
+                return redirect('customers')
+        messages.error(request, "Invalid username or password")
+        return render(request, "login_form.html", {"form": form})
+
+@login_required
+def signout_user(request):
+    logout(request)
+    return redirect('login')
