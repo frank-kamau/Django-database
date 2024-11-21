@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from pyexpat.errors import messages
@@ -45,6 +46,7 @@ def customers(request):
         paginated_data = paginator.page(1)
     return render(request, "customers.html", {"data": paginated_data})
 
+
 @login_required
 @permission_required("sacco.delete_customer", raise_exception=True)
 def delete_customer(request, customer_id):
@@ -69,7 +71,8 @@ def add_customer(request):
         form = CustomerForm()
     return render(request, 'customer_form.html', {"form": form})
 
-
+@login_required
+@permission_required("sacco.change_customer", raise_exception=True)
 def update_customer(request, customer_id ):
     customer = get_object_or_404(Customer, id=customer_id)
     if request.method == "POST":
@@ -80,6 +83,22 @@ def update_customer(request, customer_id ):
     else:
         form = CustomerForm(instance=customer)
     return render(request, 'customer_update_form.html', {"form": form})
+
+@login_required
+def search_customer(request):
+    search_term = request.GET.get('search')
+    data = Customer.objects.filter(Q(first_name__icontains=search_term) | Q(last_name__icontains=search_term) | Q(email__icontains=search_term) )
+     # select * from customers where first_name Like '%noel%' OR last_name LIKE '%noel%'
+    paginator = Paginator(data, 10)
+    page_number = request.GET.get('page', 1)
+    try:
+        paginated_data = paginator.page(page_number)
+    except PageNotAnInteger | EmptyPage:
+        paginated_data = paginator.page(1)
+    return render(request, "customers.html", {"data": paginated_data})
+
+
+
 
 @login_required
 @permission_required("sacco.view_customer", raise_exception=True)
