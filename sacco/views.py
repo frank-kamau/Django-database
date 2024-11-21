@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from pyexpat.errors import messages
 
-from sacco.app_forms import CustomerForm, LoginForm
+from sacco.app_forms import CustomerForm, LoginForm, DepositForm
 from sacco.models import Customer, Deposit
 
 
@@ -96,6 +96,20 @@ def search_customer(request):
     except PageNotAnInteger | EmptyPage:
         paginated_data = paginator.page(1)
     return render(request, "customers.html", {"data": paginated_data})
+
+
+def deposit(request, customer_id):
+    customer = get_object_or_404(Customer, id=customer_id)
+    if request.method == "POST":
+        form = DepositForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            depo = Deposit(amount=amount, status=True, customer=customer)
+            depo.save()
+            return redirect('customers')
+    else:
+        form = DepositForm()
+    return render(request, 'deposit_form.html', {"form": form, "customer": customer})
 
 
 

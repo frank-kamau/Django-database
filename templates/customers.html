@@ -16,6 +16,7 @@
                 <th>Joining Date</th>
                 <th>Delete</th>
                 <th>Update</th>
+                <th>Deposit</th>
                 <th>Details</th>
             </tr>
             
@@ -30,20 +31,26 @@
                     	 <td>
                             <a class ="btn btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a>
                          </td>
-                    {% endif %} 
-                
+                    {% endif %}
+
                     {% if perms.sacco.change_customer %}
                     	 <td>
                             <a class ="btn btn-success btn-sm" href="{% url 'update_customer' customer.id %}">Update</a>
                          </td>
-                    {% endif %} 
-                   
+                    {% endif %}
+                
+                    {% if perms.sacco.deposit_customer %}
+                    	 <td>
+                            <a class ="btn btn-primary btn-sm" href="{% url 'deposit' customer.id %}">Deposit</a>
+                         </td>
+                    {% endif %}
+
                     {% if perms.sacco.view_customer %}
                          <td>
                             <a class ="btn btn-primary btn-sa" href="{% url 'customer_details' customer.id %}">Details</a>
                          </td>
                     {% endif %}
-                
+
                 </tr>
             {% empty %}
             	<p>No customers in the sacco.</p>
