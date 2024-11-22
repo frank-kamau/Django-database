@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Adding Deposits to customer">
+    <list default="true" id="012cb329-6c51-4db1-beee-0114a944c2d1" name="Changes" comment="Uploading profile pic">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_database/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_database/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sacco/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sacco/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/master.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Must/PycharmProjects/project_database/templates",
@@ -127,7 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731393818440</updated>
-      <workItem from="1731393833997" duration="87964000" />
+      <workItem from="1731393833997" duration="97508000" />
     </task>
     <task id="LOCAL-00001" summary="Insertion and Retrieval">
       <option name="closed" value="true" />
@@ -241,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732217714239</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Adding Deposits total">
+      <option name="closed" value="true" />
+      <created>1732265661509</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732265661510</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Uploading profile pic">
+      <option name="closed" value="true" />
+      <created>1732273239726</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732273239726</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +287,9 @@
     <MESSAGE value="Updating a customer" />
     <MESSAGE value="search customers" />
     <MESSAGE value="Adding Deposits to customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Deposits to customer" />
+    <MESSAGE value="Adding Deposits total" />
+    <MESSAGE value="Uploading profile pic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploading profile pic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
