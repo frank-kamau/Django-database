@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.db.models import Q
+from django.db.models import Q, Sum
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from pyexpat.errors import messages
@@ -98,6 +98,7 @@ def search_customer(request):
     return render(request, "customers.html", {"data": paginated_data})
 
 
+@login_required
 def deposit(request, customer_id):
     customer = get_object_or_404(Customer, id=customer_id)
     if request.method == "POST":
@@ -119,7 +120,8 @@ def deposit(request, customer_id):
 def customer_details(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     deposits = Deposit.objects.filter(customer_id=customer_id)
-    return render(request, "details.html", {"deposits": deposits, "customer": customer})
+    total = Deposit.objects.filter(customer=customer).filter(status=True).aggregate(Sum('amount')) ['amount__sum']
+    return render(request, "details.html", {"deposits": deposits, "customer": customer, "total": total})
 
 
 def login_user(request):
